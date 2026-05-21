@@ -1,5 +1,7 @@
 # Wordle on Corsair
 
+Play Wordle in the browser and light up Corsair keyboards through ckb-next.
+
 A Flask Wordle clone with ckb-next pipe integration for Corsair keyboards.
 
 ## Run
