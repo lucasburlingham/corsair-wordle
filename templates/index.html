@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wordle on Corsair</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar" aria-label="Wordle header">
+    <div class="topbar-inner">
+      <div class="topbar-side" aria-hidden="true">
+        <button class="icon-button" type="button">☰</button>
+      </div>
+      <h1 class="wordmark">WORDLE</h1>
+      <div class="topbar-side topbar-actions" aria-hidden="true">
+        <button class="icon-button" type="button">?</button>
+        <button class="icon-button" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="status-bar" aria-live="polite">
+      <div id="game-message">Loading game…</div>
+      <div id="keyboard-status" class="muted"></div>
+    </section>
+
+    <section class="board-panel">
+      <div id="board" class="board" aria-label="Wordle board"></div>
+    </section>
+
+    <section class="keyboard-panel">
+      <div id="keyboard" class="keyboard" aria-label="On-screen keyboard"></div>
+      <div class="controls">
+        <button id="submit-btn" class="accent">Enter</button>
+        <button id="reset-btn" class="ghost">New Game</button>
+      </div>
+      <p class="hint">Type a five-letter word, press Enter, and watch the keyboard light up in gray, yellow, and green.</p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
