@@ -1,6 +1,6 @@
 # Wordle on Corsair
 
-Flask Wordle clone with ckb-next pipe integration for Corsair keyboards.
+A Flask Wordle clone with ckb-next pipe integration for Corsair keyboards.
 
 ## Run
 
@@ -8,7 +8,7 @@ Flask Wordle clone with ckb-next pipe integration for Corsair keyboards.
 ./launch.sh
 ```
 
-`launch.sh` starts ckb-next with a temporary profile copy that seeds the Pipe animation, then opens the Flask UI in your browser. If ckb-next is already running with a pipe animation, the app will use `CKB_PIPE` or auto-detect `/tmp/ckbpipe*`.
+`launch.sh` creates a local virtual environment if needed, starts ckb-next when available, seeds the Pipe animation through a temporary profile copy, and opens the Flask UI in your browser. If ckb-next is already running with a pipe animation, the app will use `CKB_PIPE` or auto-detect `/tmp/ckbpipe*`.
 
 ## Manual Start
 
@@ -19,6 +19,14 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python app.py
 ```
+
+Then open http://127.0.0.1:5000/ in your browser.
+
+## What It Does
+
+- Plays a six-guess, five-letter Wordle round in the browser.
+- Mirrors guess results to the on-screen keyboard.
+- Pushes the current board state to supported Corsair devices through ckb-next when available.
 
 ## Hardware Notes
 
